@@ -48,11 +48,11 @@ class CodeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: getVerticalSize(50)),
-                   /* Text(StringConstants.timer,
+                    Text(StringConstants.timer,
                         style: TextStyle(
                             fontSize: getFontSize(55),
                             fontWeight: FontWeight.w700,
-                            color: Colors.black)),*/
+                            color: Colors.black)),
                     SizedBox(height: getVerticalSize(15)),
                     Text(StringConstants.typeThe,
                         textAlign: TextAlign.center,
