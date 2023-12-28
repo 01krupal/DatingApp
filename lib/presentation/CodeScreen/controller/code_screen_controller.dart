@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:dating_app/App%20Configurations/ConstantsFiles/color_constants.dart';
 import 'package:dating_app/Utils/HelperFiles/math_utils.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,7 +29,37 @@ class CodeScreenController extends GetxController {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: ColorConstant.dotGrey)));
 
+  RxInt countdown = 60.obs;
+  late RxString formattedTime = "0:00".obs; // Set a default value
+
+  @override
+  void onInit() {
+    super.onInit();
+    startTimer();
+  }
+
+  void startTimer() {
+    const oneSecond = Duration(seconds: 1);
+
+    Timer.periodic(oneSecond, (timer) {
+      if (countdown.value == 0) {
+        timer.cancel();
+        Get.snackbar("Time's up", "Please request a new code");
+      } else {
+        countdown.value--;
+        updateFormattedTime();
+      }
+    });
+  }
+
+  void updateFormattedTime() {
+    formattedTime.value =
+    "${(countdown.value ~/ 60).toString().padLeft(1, '0')}:${(countdown.value % 60).toString().padLeft(2, '0')}";
+  }
 }
+
+
+
 
 
 
