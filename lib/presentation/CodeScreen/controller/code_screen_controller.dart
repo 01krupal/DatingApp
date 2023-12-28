@@ -29,8 +29,11 @@ class CodeScreenController extends GetxController {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: ColorConstant.dotGrey)));
 
+
+
   RxInt countdown = 60.obs;
-  late RxString formattedTime = "0:00".obs; // Set a default value
+  late RxString formattedTime = "0:00".obs;
+  RxBool isTimerExpired = false.obs; // Added this line
 
   @override
   void onInit() {
@@ -38,12 +41,15 @@ class CodeScreenController extends GetxController {
     startTimer();
   }
 
+
+
   void startTimer() {
     const oneSecond = Duration(seconds: 1);
 
     Timer.periodic(oneSecond, (timer) {
       if (countdown.value == 0) {
         timer.cancel();
+        isTimerExpired.value = true; // Set isTimerExpired to true
         Get.snackbar("Time's up", "Please request a new code");
       } else {
         countdown.value--;
@@ -55,6 +61,11 @@ class CodeScreenController extends GetxController {
   void updateFormattedTime() {
     formattedTime.value =
     "${(countdown.value ~/ 60).toString().padLeft(1, '0')}:${(countdown.value % 60).toString().padLeft(2, '0')}";
+  }
+
+  void restartTimer() {
+    countdown.value = 60;
+    isTimerExpired.value = false; // Reset isTimerExpired to false
   }
 }
 
