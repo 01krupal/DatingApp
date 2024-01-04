@@ -19,7 +19,6 @@ class SplashScreenController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
   Future changeRoute() async {
     Future.delayed(Duration(milliseconds: 2000), () {
       Get.offAllNamed(AppRoutes.onbordingscreen);

@@ -1,9 +1,9 @@
-import 'dart:io';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import 'App Configurations/pref_utils.dart';
 
 
 class InitialBindings extends Bindings {
@@ -11,7 +11,7 @@ class InitialBindings extends Bindings {
   Future<void> dependencies() async {
     WidgetsFlutterBinding.ensureInitialized();
     // await Firebase.initializeApp();
-   // PrefUtils.init();
+   PrefUtils().init();
     //Get.put(PrefUtils());
     //StringConstants.PLATFORM_STRING=Platform.isIOS?"ios":"android";
     // await NativeMethodChannel.platformForMoEngage.invokeMethod('InitilizeMoEngage');

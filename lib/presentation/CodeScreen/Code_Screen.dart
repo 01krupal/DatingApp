@@ -10,10 +10,9 @@ import '../../App Configurations/ConstantsFiles/image_constants.dart';
 import '../../App Configurations/ConstantsFiles/string_constants.dart';
 import '../../Custom Widgets/NumPad.dart';
 
-class CodeScreen extends StatelessWidget {
+class CodeScreen extends GetWidget<CodeScreenController> {
   CodeScreen({Key? key}) : super(key: key);
 
-  final CodeScreenController codeController = Get.put(CodeScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +52,7 @@ class CodeScreen extends StatelessWidget {
                   SizedBox(height: getVerticalSize(50)),
                   Obx(
                         () => Text(
-                      codeController.formattedTime.value,
+                      controller.formattedTime.value,
                       style: TextStyle(
                         fontSize: getFontSize(55),
                         fontWeight: FontWeight.w700,
@@ -71,14 +70,14 @@ class CodeScreen extends StatelessWidget {
                   Center(
                     child: Pinput(
                       readOnly: true,
-                      controller: codeController.pinController,
+                      controller: controller.pinController,
                       length: 4,
                       keyboardType: TextInputType.number,
-                      defaultPinTheme: codeController.defaultPinTheme,
-                      focusedPinTheme: codeController.defaultPinTheme.copyWith(
-                        decoration: codeController.defaultPinTheme.decoration!.copyWith(
+                      defaultPinTheme: controller.defaultPinTheme,
+                      focusedPinTheme: controller.defaultPinTheme.copyWith(
+                        decoration: controller.defaultPinTheme.decoration!.copyWith(
                           border: Border.all(
-                            color: codeController.isTimerExpired.value
+                            color: controller.isTimerExpired.value
                                 ? Colors.red // Set the border color to red when the timer expires
                                 : ColorConstant.btnRed,
                           ),
@@ -91,20 +90,20 @@ class CodeScreen extends StatelessWidget {
                     children: [
                       NumPad(
                         type: 'OTP4',
-                        controller: codeController.pinController,
+                        controller: controller.pinController,
                         delete: () {
                           HapticFeedback.lightImpact();
-                          if (codeController.pinController.text.isNotEmpty) {
-                            codeController.pinController.text =
-                                codeController.pinController.text.substring(
+                          if (controller.pinController.text.isNotEmpty) {
+                            controller.pinController.text =
+                                controller.pinController.text.substring(
                                   0,
-                                  codeController.pinController.text.length - 1,
+                                  controller.pinController.text.length - 1,
                                 );
                           }
                         },
                         onSubmit: () {
-                          if (codeController.pinController.text.length == 4) {
-                            if (codeController.isTimerExpired.value) {
+                          if (controller.pinController.text.length == 4) {
+                            if (controller.isTimerExpired.value) {
                               // Timer has expired, show a message or handle as needed
                               Get.snackbar(
                                 'Error',
@@ -115,7 +114,7 @@ class CodeScreen extends StatelessWidget {
                               // Valid 4-digit code entered, navigate to the next screen
                               Get.toNamed(AppRoutes.profileScreen);
                               // Optionally restart the timer
-                              codeController.restartTimer();
+                              controller.restartTimer();
                             }
                           } else {
                             // Invalid code length, show a message
@@ -129,8 +128,8 @@ class CodeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          if (codeController.pinController.text.length == 4) {
-                            if (codeController.isTimerExpired.value) {
+                          if (controller.pinController.text.length == 4) {
+                            if (controller.isTimerExpired.value) {
                               // Timer has expired, show a message or handle as needed
                               Get.snackbar(
                                 'Error',
@@ -141,7 +140,7 @@ class CodeScreen extends StatelessWidget {
                               // Valid 4-digit code entered, navigate to the next screen
                               Get.toNamed(AppRoutes.profileScreen);
                               // Optionally restart the timer
-                              codeController.restartTimer();
+                              controller.restartTimer();
                             }
                           } else {
                             // Invalid code length, show a message

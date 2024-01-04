@@ -10,10 +10,10 @@ import '../../Custom Widgets/app_ElevatedButton .dart';
 import '../../Utils/HelperFiles/math_utils.dart';
 import '../../routes/app_routes.dart';
 
-class FriendScreen extends StatelessWidget {
+class FriendScreen extends GetWidget<FriendScreenController> {
   FriendScreen({super.key});
 
-  FriendScreenController friebdController = Get.put(FriendScreenController());
+
 
   @override
   Widget build(BuildContext context) {

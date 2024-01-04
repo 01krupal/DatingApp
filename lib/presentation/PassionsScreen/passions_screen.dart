@@ -10,11 +10,9 @@ import '../../Custom Widgets/app_ElevatedButton .dart';
 import '../../routes/app_routes.dart';
 import 'controller/passions_screen_controller.dart';
 
-class PassionScreen extends StatelessWidget {
+class PassionScreen extends GetWidget<PassionScreenController> {
   PassionScreen({super.key});
-
-  PassionScreenController passionScreenController =
-      Get.put(PassionScreenController());
+  
 
   @override
   Widget build(BuildContext context) {
@@ -75,20 +73,20 @@ class PassionScreen extends StatelessWidget {
                 spacing: 25,
                 runSpacing: 10,
                 children: List.generate(
-                    passionScreenController.interestName.length,
+                    controller.interestName.length,
                     (index) => Obx(() => InkWell(
                         onTap: () =>
-                            passionScreenController.toggleSelection(index),
+                            controller.toggleSelection(index),
                         child: Container(
                             height: getVerticalSize(55),
                             width: getHorizontalSize(150),
                             decoration: BoxDecoration(
-                                    color: passionScreenController.isSelect[index]
+                                    color: controller.isSelect[index]
                                     ? ColorConstant.primaryColor
                                     : ColorConstant.backgroundColor,
                                 border: Border.all(
                                   width: 1,
-                                  color: passionScreenController.isSelect[index]
+                                  color: controller.isSelect[index]
                                       ? ColorConstant.primaryColor
                                       : ColorConstant.dotGrey,
                                 ),
@@ -99,10 +97,10 @@ class PassionScreen extends StatelessWidget {
                                     horizontal: getHorizontalSize(10)),
                                 child: Row(children: [
                                   Image.asset(
-                                      passionScreenController
+                                      controller
                                           .interestName[index]["interstImage"],
                                       width: getHorizontalSize(20),
-                                      color: passionScreenController
+                                      color: controller
                                               .isSelect[index]
                                           ? ColorConstant.backgroundColor
                                           : Colors.red),
@@ -110,11 +108,11 @@ class PassionScreen extends StatelessWidget {
                                     width: getHorizontalSize(10),
                                   ),
                                   Text(
-                                      passionScreenController
+                                      controller
                                           .interestName[index]["interstText"],
                                       style: TextStyle(
                                           fontSize: getFontSize(15),
-                                          color: passionScreenController
+                                          color: controller
                                                   .isSelect[index]
                                               ? ColorConstant.backgroundColor
                                               : ColorConstant.blackC))

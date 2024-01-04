@@ -65,7 +65,7 @@ class CodeScreenController extends GetxController {
 
   void restartTimer() {
     countdown.value = 60;
-    isTimerExpired.value = false; // Reset isTimerExpired to false
+    isTimerExpired.value = true; // Reset isTimerExpired to false
   }
 }
 

@@ -10,11 +10,9 @@ import '../../Custom Widgets/app_ElevatedButton .dart';
 import '../../Utils/HelperFiles/math_utils.dart';
 import '../../routes/app_routes.dart';
 
-class NotificationScreen extends StatelessWidget {
+class NotificationScreen extends GetWidget<NotificationScreenController> {
   NotificationScreen({super.key});
 
-  NotificationScreenController NotificationController =
-      Get.put(NotificationScreenController());
 
   @override
   Widget build(BuildContext context) {

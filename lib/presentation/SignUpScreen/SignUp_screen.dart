@@ -11,9 +11,9 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../App Configurations/ConstantsFiles/color_constants.dart';
 import '../../routes/app_routes.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends GetWidget<SignUpScreenController> {
    SignUpScreen({super.key});
-  SignUpScreenController signupcontorller = Get.put(SignUpScreenController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -5,24 +5,19 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import '../../../App Configurations/ConstantsFiles/image_constants.dart';
 
 class PassionScreenController extends GetxController {
-/*  var selectedBTN = 0.obs;
-
-  void Onchange(int index) {
-    selectedBTN.value = index;
-  }*/
-
   RxList<bool> isSelect = <bool>[].obs;
+
   @override
   void onInit() {
     // TODO: implement onInit
     isSelect.assignAll(List<bool>.generate(14, (index) => false));
     super.onInit();
   }
+
   void toggleSelection(int index) {
     isSelect[index] = !isSelect[index];
     update();
   }
-
 
   List interestName = [
     {

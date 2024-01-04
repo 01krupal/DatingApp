@@ -8,10 +8,9 @@ import '../../App Configurations/ConstantsFiles/color_constants.dart';
 import '../../Utils/HelperFiles/math_utils.dart';
 import 'controller/splash_screen_controller.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends GetWidget<SplashScreenController> {
   SplashScreen({super.key});
 
-  SplashScreenController splashController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {

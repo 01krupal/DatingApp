@@ -4,6 +4,12 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileScreenController extends GetxController{
+  Rx<DateTime?> selectedDate = Rx<DateTime?>(DateTime.now());
+
+  // Method to update the selected date
+  void updateSelectedDate(DateTime date) {
+    selectedDate.value = date;
+  }
 
   @override
   void onInit() {
@@ -20,7 +26,7 @@ class ProfileScreenController extends GetxController{
   RxString imagePath = ''.obs;
 
 
-  Future getImage ()async{
+  Future getImage() async{
     final ImagePicker picker = ImagePicker();
     final image = await picker.pickImage(source: ImageSource.gallery);
     if (image != null){

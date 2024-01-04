@@ -9,12 +9,13 @@ import 'package:dating_app/presentation/NumberScreen/controller/number_screen_co
 import 'package:dating_app/routes/app_routes.dart';
 import 'package:dating_app/Utils/HelperFiles/math_utils.dart';
 
+import '../../App Configurations/pref_utils.dart';
 
 
-class NumberScreen extends StatelessWidget {
+
+class NumberScreen extends GetWidget<NumberScreenController> {
   NumberScreen({super.key});
 
-  NumberScreenController numberController = Get.put(NumberScreenController());
   TextEditingController  phoneNumberController = TextEditingController();
 
   @override
@@ -49,7 +50,7 @@ class NumberScreen extends StatelessWidget {
                       children: [
                         const CountryCodePicker(
                           closeIcon: Icon(Icons.keyboard_arrow_down),
-                          showDropDownButton: true,
+                         /* showDropDownButton: true,*/
                           padding: EdgeInsets.all(1.0),
                           initialSelection: 'in',
                         ),
@@ -82,6 +83,7 @@ class NumberScreen extends StatelessWidget {
               buttonName: StringConstants.continueBtn,
               onPressed: () {
                 if (phoneNumberController.text.length == 10) {
+                  // PrefUtils.sharedPreferences;
                   Get.toNamed(AppRoutes.codeScreen);
                 } else {
                   // Show a Snackbar with the validation error
