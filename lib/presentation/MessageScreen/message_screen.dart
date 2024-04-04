@@ -12,7 +12,8 @@ import '../../Utils/HelperFiles/math_utils.dart';
 class MessageScreen extends GetWidget<MessageScreenController> {
   MessageScreen({super.key});
 
-  MessageScreenController messageScreencontroller = Get.put(MessageScreenController());
+  MessageScreenController messageScreencontroller =
+      Get.put(MessageScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,8 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                       AppImages.sort,
                     ),
                   ),
-                )              ],
+                )
+              ],
             ),
           ),
           SizedBox(height: getVerticalSize(20)),
@@ -77,8 +79,8 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                       return Column(
                         children: [
                           Padding(
-                              padding: EdgeInsets.only(
-                                  right: getHorizontalSize(15)),
+                              padding:
+                                  EdgeInsets.only(right: getHorizontalSize(15)),
                               child: InkWell(
                                   onTap: () => controller.colour.value,
                                   child: Obx(
@@ -86,25 +88,22 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           border: Border.all(
-                                              color:
-                                                  controller.colour.value == 0
-                                                      ? Colors.red
-                                                      : ColorConstant
-                                                          .transPatent,
+                                              color: controller.colour.value ==
+                                                      0
+                                                  ? Colors.red
+                                                  : ColorConstant.transPatent,
                                               width: 2)),
                                       child: CircleAvatar(
-                                        maxRadius: 32,
+                                        maxRadius: 30,
                                         backgroundImage: AssetImage(controller
                                             .status[index]["statusImage"]),
                                       ),
                                     ),
                                   ))),
                           Padding(
-                              padding: EdgeInsets.only(
-                                  left: getHorizontalSize(12),
-                                  top: getVerticalSize(2)),
-                              child: Text(
-                                  controller.status[index]["statusText"])),
+                              padding: EdgeInsets.only(top: getVerticalSize(2)),
+                              child:
+                                  Text(controller.status[index]["statusText"])),
                         ],
                       );
                     })),
@@ -126,7 +125,7 @@ class MessageScreen extends GetWidget<MessageScreenController> {
               itemBuilder: (context, index) {
                 return StatefulBuilder(
                   builder: (context, setState) {
-                   return InkWell(
+                    return InkWell(
                       onTap: () {
                         showModalBottomSheet(
                             isScrollControlled: true,
@@ -136,7 +135,8 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                               return ConstrainedBox(
                                 constraints: BoxConstraints(
                                     maxHeight:
-                                    MediaQuery.of(context).size.height * 0.8),
+                                        MediaQuery.of(context).size.height *
+                                            0.8),
                                 child: Container(
                                   decoration: BoxDecoration(
                                       color: ColorConstant.backgroundColor,
@@ -152,24 +152,24 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                                       children: [
                                         Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                                  MainAxisAlignment.start,
                                               children: [
                                                 CircleAvatar(
                                                   maxRadius: 32,
                                                   backgroundImage: AssetImage(
                                                       controller.status[index]
-                                                      ["chatImage"]),
+                                                          ["chatImage"]),
                                                 ),
                                                 SizedBox(
                                                   width: 15,
                                                 ),
                                                 Text(
                                                   controller.status[index]
-                                                  ["chatTitleText"],
+                                                      ["chatTitleText"],
                                                   style: TextStyle(
                                                     fontSize: getFontSize(18),
                                                     fontWeight: FontWeight.w700,
@@ -181,10 +181,13 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                                               height: getVerticalSize(55),
                                               width: getHorizontalSize(53),
                                               decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(13),
-                                                  border: Border.all(color: Colors.grey)),
+                                                  borderRadius:
+                                                      BorderRadius.circular(13),
+                                                  border: Border.all(
+                                                      color: Colors.grey)),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(9.0),
+                                                padding:
+                                                    const EdgeInsets.all(9.0),
                                                 child: Image.asset(
                                                   AppImages.moreDots,
                                                 ),
@@ -197,66 +200,94 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                                             messages: controller.messages,
                                             onSendPressed: (p0) {},
                                             user: controller.user,
-                                            onPreviewDataFetched:
-                                            controller.handlePreviewDataFetched,
+                                            onPreviewDataFetched: controller
+                                                .handlePreviewDataFetched,
                                             showUserAvatars: true,
                                             showUserNames: true,
-                                            theme:DefaultChatTheme(backgroundColor: ColorConstant.transPatent,primaryColor: ColorConstant.btnBackgrung),
+                                            theme: DefaultChatTheme(
+                                                backgroundColor:
+                                                    ColorConstant.transPatent,
+                                                primaryColor:
+                                                    ColorConstant.btnBackgrung),
                                             customBottomWidget: Padding(
-                                              padding: EdgeInsets.only(left: getHorizontalSize(25),right: getHorizontalSize(25)),
-                                              child: Row(
-                                                children: [
+                                                padding: EdgeInsets.only(
+                                                    left: getHorizontalSize(25),
+                                                    right:
+                                                        getHorizontalSize(25)),
+                                                child: Row(children: [
                                                   Expanded(
                                                     child: Container(
-                                                        height: getVerticalSize(52),
+                                                        height:
+                                                            getVerticalSize(52),
                                                         child: Row(
                                                           children: [
                                                             Expanded(
                                                               child: TextField(
                                                                 controller:
-                                                                controller.textEditingController,
-                                                                decoration: InputDecoration(
-                                                                    border: OutlineInputBorder(
-                                                                        borderRadius:
-                                                                        BorderRadius.circular(15),
-                                                                        borderSide: BorderSide(
-                                                                            width: getHorizontalSize(1))),
-                                                                    hintText:StringConstants.yourMessage,
-                                                                    suffixIcon:const InkWell (
+                                                                    controller
+                                                                        .textEditingController,
+                                                                decoration:
+                                                                    InputDecoration(
+                                                                        border: OutlineInputBorder(
+                                                                            borderRadius: BorderRadius.circular(
+                                                                                15),
+                                                                            borderSide: BorderSide(
+                                                                                width: getHorizontalSize(
+                                                                                    1))),
+                                                                        hintText:
+                                                                            StringConstants
+                                                                                .yourMessage,
+                                                                        suffixIcon:
+                                                                            const InkWell(
 /*                                                                        onTap: () {
                                                                           controller.handleSendPressed(controller.textEditingController.text);
                                                                           controller.textEditingController.text="";
                                                                         }*/
-                                                                        child:
-                                                                        Icon(Icons.dark_mode,))),
+                                                                                child: Icon(
+                                                                          Icons
+                                                                              .dark_mode,
+                                                                        ))),
                                                               ),
                                                             ),
                                                           ],
-                                                        )
-                                                    ),
+                                                        )),
                                                   ),
-                                                  SizedBox(width: getHorizontalSize(10)),
-                                                  InkWell(onTap: () {
-                                                    controller.handleSendPressed(controller.textEditingController.text);
-                                                    controller.textEditingController.text="";
-                                                  },
+                                                  SizedBox(
+                                                      width: getHorizontalSize(
+                                                          10)),
+                                                  InkWell(
+                                                    onTap: () {
+                                                      controller.handleSendPressed(
+                                                          controller
+                                                              .textEditingController
+                                                              .text);
+                                                      controller
+                                                          .textEditingController
+                                                          .text = "";
+                                                    },
                                                     child: Container(
-                                                      height: getVerticalSize(50),
-                                                      width: getHorizontalSize(50),
+                                                      height:
+                                                          getVerticalSize(50),
+                                                      width:
+                                                          getHorizontalSize(50),
                                                       decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(13),
-                                                          border: Border.all(color: Colors.grey)),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(13),
+                                                          border: Border.all(
+                                                              color:
+                                                                  Colors.grey)),
                                                       child: Padding(
-                                                        padding: const EdgeInsets.all(9.0),
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(9.0),
                                                         child: Image.asset(
                                                           AppImages.send,
                                                         ),
                                                       ),
                                                     ),
                                                   )
-                                                ]
-                                              )
-                                            ),
+                                                ])),
                                           ),
                                         )
                                       ],
@@ -274,8 +305,8 @@ class MessageScreen extends GetWidget<MessageScreenController> {
                           children: [
                             CircleAvatar(
                               maxRadius: 32,
-                              backgroundImage:
-                              AssetImage(controller.status[index]["chatImage"]),
+                              backgroundImage: AssetImage(
+                                  controller.status[index]["chatImage"]),
                             ),
                             SizedBox(
                               width: getHorizontalSize(10),

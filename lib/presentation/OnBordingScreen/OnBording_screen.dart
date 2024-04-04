@@ -24,63 +24,59 @@ class OnBoardingScreen extends GetWidget<OnBoardingScreenController> {
             height: getVerticalSize(100),
           ),
           CarouselSlider.builder(
-            itemCount: controller.onBoardingData.length,
-            itemBuilder: (context, index, realIndex) {
-              return ClipRRect(borderRadius: const BorderRadius.all(Radius.circular(15)),
-                  child: Image.asset(
-                controller.onBoardingData[index],
-                fit: BoxFit.cover,
-              ));
-            },
-            options: CarouselOptions(
-                scrollDirection: Axis.horizontal,
-                onPageChanged: (index, reason) {
-                  controller.currentPage.value = index;
-                  //print(controller.currentPage.value);
-                },
-                autoPlay: true,
-                height: 400,
-                viewportFraction: 0.7,
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.zoom),
-          ),
+              itemCount: controller.onBoardingData.length,
+              itemBuilder: (context, index, realIndex) {
+                return ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    child: Image.asset(
+                      controller.onBoardingData[index],
+                      fit: BoxFit.cover,
+                    ));
+              },
+              options: CarouselOptions(
+                  scrollDirection: Axis.horizontal,
+                  onPageChanged: (index, reason) {
+                    controller.currentPage.value = index;
+                    //print(controller.currentPage.value);
+                  },
+                  autoPlay: true,
+                  height: 400,
+                  viewportFraction: 0.7,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.zoom)),
           SizedBox(height: getVerticalSize(50)),
           Obx(() => Text(
-                controller.currentPage.value == 2
-                    ? "Premium"
-                    : controller.currentPage.value == 1
-                        ? "Matches"
-                        : "Algorithm",
-                style: TextStyle(
-                    fontSize: getFontSize(25),
-                    color: ColorConstant.primaryColor,
-                    fontWeight: FontWeight.w700),
-              )),
+              controller.currentPage.value == 2
+                  ? "Premium"
+                  : controller.currentPage.value == 1
+                      ? "Matches"
+                      : "Algorithm",
+              style: TextStyle(
+                  fontSize: getFontSize(25),
+                  color: ColorConstant.primaryColor,
+                  fontWeight: FontWeight.w700))),
           SizedBox(
             height: getVerticalSize(20),
           ),
           Padding(
-            padding: EdgeInsets.only(
-                left: getHorizontalSize(20), right: getHorizontalSize(20)),
-            child: Obx(() => Text(
-                  controller.currentPage.value == 2
-                      ? StringConstants.signUpToday
-                      : controller.currentPage.value == 1
-                          ? StringConstants.weMatch
-                          : StringConstants.userGoing,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: getFontSize(15), fontWeight: FontWeight.w400),
-                )),
-          ),
+              padding: EdgeInsets.only(
+                  left: getHorizontalSize(20), right: getHorizontalSize(20)),
+              child: Obx(() => Text(
+                    controller.currentPage.value == 2
+                        ? StringConstants.signUpToday
+                        : controller.currentPage.value == 1
+                            ? StringConstants.weMatch
+                            : StringConstants.userGoing,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: getFontSize(15), fontWeight: FontWeight.w400),
+                  ))),
           Padding(
               padding: EdgeInsets.symmetric(vertical: getVerticalSize(50)),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    controller.onBoardingData.length,
-                    (index) => buildDot(index: index),
-                  ))),
+                  children: List.generate(controller.onBoardingData.length,
+                      (index) => buildDot(index: index)))),
           AppElevatedButton(
               buttonName: StringConstants.createAn,
               onPressed: () => Get.toNamed(AppRoutes.signupscreen)),
@@ -88,10 +84,8 @@ class OnBoardingScreen extends GetWidget<OnBoardingScreenController> {
           Center(
               child:
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(
-              "Already have an account? ",
-              style: TextStyle(fontSize: getFontSize(15)),
-            ),
+            Text("Already have an account? ",
+                style: TextStyle(fontSize: getFontSize(15))),
             TextButton(
                 style: const ButtonStyle(
                     overlayColor: MaterialStatePropertyAll(Colors.transparent)),

@@ -68,7 +68,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -123,7 +123,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -178,7 +178,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -233,7 +233,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -288,7 +288,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -343,7 +343,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -398,7 +398,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -453,7 +453,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -508,7 +508,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -563,7 +563,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -618,7 +618,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -673,7 +673,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -728,7 +728,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -783,7 +783,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -838,7 +838,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -893,7 +893,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,
@@ -948,7 +948,7 @@ class MainScreenController extends GetxController{
               ),
               Spacer(),
               Container(
-                  height: getVerticalSize(65),
+                  height: getVerticalSize(68),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.black38,

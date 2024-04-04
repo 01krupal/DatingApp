@@ -56,7 +56,7 @@ class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
       name: splashScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => SplashScreen(),
       bindings: [
@@ -66,7 +66,7 @@ class AppRoutes {
 
     GetPage(
       name: onbordingscreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () =>  OnBoardingScreen(),
       bindings: [
@@ -75,7 +75,7 @@ class AppRoutes {
     ),
     GetPage(
       name: signupscreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => SignUpScreen(),
       bindings: [
@@ -84,7 +84,7 @@ class AppRoutes {
     ),
     GetPage(
       name: numberScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => NumberScreen(),
       bindings: [
@@ -93,7 +93,7 @@ class AppRoutes {
     ),
     GetPage(
       name: codeScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => CodeScreen(),
       bindings: [
@@ -102,7 +102,7 @@ class AppRoutes {
     ),
     GetPage(
       name: profileScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => ProfileScreen(),
       bindings: [
@@ -111,7 +111,7 @@ class AppRoutes {
     ),
     GetPage(
       name: iamScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => IamScreen(),
       bindings: [
@@ -120,7 +120,7 @@ class AppRoutes {
     ),
     GetPage(
       name: passionScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => PassionScreen(),
       bindings: [
@@ -129,7 +129,7 @@ class AppRoutes {
     ),
     GetPage(
       name: friendScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => FriendScreen(),
       bindings: [
@@ -138,7 +138,7 @@ class AppRoutes {
     ),
     GetPage(
       name: notificationScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => NotificationScreen(),
       bindings: [
@@ -147,7 +147,7 @@ class AppRoutes {
     ),
     GetPage(
       name: dashboardScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => DashboardScreen(),
       bindings: [
@@ -156,7 +156,7 @@ class AppRoutes {
     ),
     GetPage(
       name: mainScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => MainScreen(),
       bindings: [
@@ -165,7 +165,7 @@ class AppRoutes {
     ),
     GetPage(
       name: matchScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () => MatchScreen(),
       bindings: [
@@ -183,7 +183,7 @@ class AppRoutes {
     ),
     GetPage(
       name: messageScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () =>MainScreen(),
       bindings: [
@@ -192,7 +192,7 @@ class AppRoutes {
     ),
     GetPage(
       name: mainProfileScreen,
-      transition: Transition.rightToLeft,
+      transition: Transition.upToDown,
       transitionDuration: const Duration(milliseconds: 400),
       page: () =>MainScreen(),
       bindings: [
